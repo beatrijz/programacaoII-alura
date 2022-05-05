@@ -1,0 +1,40 @@
+<canvas width="600" height="400"></canvas>
+<script>
+    var largura;
+    var altura;
+    var cor;
+
+    function repeticao(quantidade) {
+        this.quantidade = quantidade;
+        for (var i = 0; i <= quantidade; i++) {
+            pegaValores();
+        }
+
+    }
+
+    function pegaValores() {
+        var largura = parseInt(prompt("Digite a LARGURA do quadrado."));
+        var altura = parseInt(prompt("Digite a ALTURA do quadrado."));
+        var cor = prompt("Digite a COR do quadrado.");
+        this.largura = largura;
+        this.altura = altura;
+        this.cor = cor;
+        desenhaQuadrado(largura, altura, cor);
+
+    }
+
+    function desenhaQuadrado(largura, altura, cor) {
+
+        var tela = document.querySelector('canvas');
+        var pincel = tela.getContext('2d');
+        pincel.fillStyle = cor;
+        pincel.fillRect(largura, altura, 50, 50);
+        pincel.strokeRect(largura, altura, 50, 50);
+
+    }
+    var quantidade = parseInt(prompt("Entre com a QUANTIDADE de quadrados desejada."));
+    repeticao(quantidade);
+
+
+
+</script>
